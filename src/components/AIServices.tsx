@@ -27,6 +27,12 @@ const AIServices: React.FC = () => {
       title: 'Student\'s Learning Platform',
       shortDesc: 'Transforming the way Students Learn',
       description: 'Simplify your learning process with our AI-powered learning studio—designed to make note-taking and study organization faster, easier, and more intuitive. Our platform empowers students to engage with their studies more effectively, offering tools for collaboration, resource sharing, and personalized learning experiences. With a user-friendly interface, students can easily navigate through materials, track their progress, and access valuable insights that enhance their academic journey.'
+    },
+    {
+      icon: '🔄',
+      title: 'B2B Returns Portal',
+      shortDesc: 'Streamline B2B returns with AI-powered automation and insights.',
+      description: 'Simplify and automate your B2B returns process with an AI-powered portal. Manage, track, and approve returns with real-time insights, automated risk analysis, and fraud detection. Enable retail partners, CSRs, and admins to collaborate seamlessly, reduce processing time, and optimize inventory with smart recommendations and SAP S/4 HANA integration.'
     }
   ];
 
@@ -61,7 +67,12 @@ const AIServices: React.FC = () => {
               className="service-card"
             >
               <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <h3 style={{ margin: 0 }}>{service.title}</h3>
+                {service.title === 'B2B Returns Portal' && (
+                  <span className="coming-soon-badge">Coming Soon</span>
+                )}
+              </div>
               <div className="short-desc">{service.shortDesc}</div>
               <p>{service.description}</p>
             </motion.div>
