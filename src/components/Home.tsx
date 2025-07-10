@@ -9,7 +9,6 @@ const Home: React.FC = () => {
       <div className="hero-background">
         <div className="floating-particles"></div>
       </div>
-      
       <div className="hero-content">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -17,34 +16,34 @@ const Home: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="hero-title"
         >
-          INNOVATIVE SOLUTIONS
+          Empowering Your Business with Smart Solutions
         </motion.h1>
-        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="hero-subtitle"
         >
-          Empowering your business growth
+          Unlock growth, efficiency, and innovation with tailored AI, Data, and Agile services.
         </motion.div>
-        
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="hero-description"
         >
-          SSB Solutions LLC, based in Aldie, Virginia, has been at the forefront of data management and consulting for over 7 years. Originally starting as an individual endeavor, we evolved into a registered LLC in 2023. Our mission is to provide comprehensive services, including data migration, analytics, project management, and agile transformation, tailored to meet your unique business needs. We are committed to delivering excellence and driving growth for our clients through innovative solutions and expert guidance.
+          We help forward-thinking organizations solve real business challenges—fast. Whether you want to automate workflows, gain actionable insights from your data, or accelerate digital transformation, our experts deliver practical solutions that drive measurable results.<br /><br />
+          <strong>AI & Automation:</strong> Streamline operations and boost productivity.<br />
+          <strong>Data Analytics:</strong> Turn information into actionable insights.<br />
+          <strong>Agile Transformation:</strong> Adapt quickly and outperform the competition.
         </motion.p>
-        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Link to="/contact" className="cta-button">
-            Get in touch
+            Get a Free Consultation
           </Link>
         </motion.div>
       </div>

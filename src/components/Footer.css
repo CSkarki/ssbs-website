@@ -28,6 +28,12 @@
   font-size: 0.9rem;
 }
 
+.footer-info .logo-img {
+  height: 160px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
 .footer-services h4,
 .footer-contact h4 {
   color: #00ffff;

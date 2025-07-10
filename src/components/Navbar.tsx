@@ -11,7 +11,6 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -28,9 +27,8 @@ const Navbar: React.FC = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="logo" onClick={closeMobileMenu}>
-          SSB Solutions LLC
+          <img src="/ssbs-logo.png" alt="SSB Solutions Logo" className="logo-img" />
         </Link>
-        
         <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <Link to="/" onClick={closeMobileMenu} className={location.pathname === '/' ? 'active' : ''}>
             Home
@@ -51,7 +49,6 @@ const Navbar: React.FC = () => {
             Contact
           </Link>
         </div>
-
         <div className="mobile-menu-toggle" onClick={toggleMobileMenu}>
           <span></span>
           <span></span>

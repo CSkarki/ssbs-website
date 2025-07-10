@@ -7,9 +7,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
-            <h3>SSB Solutions LLC</h3>
-            <p>Based in Aldie, Virginia</p>
-            <p>7+ Years of Excellence</p>
+            <img src="/ssbs-logo.png" alt="SSB Solutions Logo" className="logo-img" />
           </div>
           <div className="footer-services">
             <h4>Our Services</h4>
@@ -27,7 +25,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 SSB Solutions LLC. All rights reserved.</p>
+          <p>&copy; 2025 SSB Solutions. All rights reserved.</p>
         </div>
       </div>
     </footer>
