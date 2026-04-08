@@ -24,20 +24,20 @@ const Navbar: React.FC = () => {
           <Link to="/" onClick={closeMobileMenu} className={location.pathname === '/' ? 'active' : ''}>
             Home
           </Link>
+          <a href="/#products" onClick={closeMobileMenu}>
+            Products
+          </a>
+          <a href="/#services" onClick={closeMobileMenu}>
+            Services
+          </a>
           <Link to="/about" onClick={closeMobileMenu} className={location.pathname === '/about' ? 'active' : ''}>
             About
           </Link>
-          <Link to="/ai-services" onClick={closeMobileMenu} className={location.pathname === '/ai-services' ? 'active' : ''}>
-            AI Experts
-          </Link>
-          <Link to="/data-services" onClick={closeMobileMenu} className={location.pathname === '/data-services' ? 'active' : ''}>
-            Data Experts
-          </Link>
-          <Link to="/agile-services" onClick={closeMobileMenu} className={location.pathname === '/agile-services' ? 'active' : ''}>
-            Agile Experts
-          </Link>
           <Link to="/contact" onClick={closeMobileMenu} className={location.pathname === '/contact' ? 'active' : ''}>
             Contact
+          </Link>
+          <Link to="/contact" onClick={closeMobileMenu} className="nav-cta">
+            Talk to Us
           </Link>
         </div>
         <button className="mobile-menu-toggle" onClick={toggleMobileMenu} type="button" aria-label="Toggle navigation">
