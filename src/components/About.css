@@ -34,8 +34,8 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(1.75rem, 2.5vw, 2.4rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.15;
+  letter-spacing: -0.02em;
+  line-height: 1.28;
   margin: 0 0 0.8rem;
 }
 
@@ -102,8 +102,8 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  line-height: 1.22;
   margin: 0 0 1.2rem;
 }
 
@@ -363,9 +363,9 @@
   font-family: 'Syne', sans-serif;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
-  line-height: 1.2;
+  line-height: 1.28;
 }
 
 .about-cta-box p {
