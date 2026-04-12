@@ -10,7 +10,7 @@ const products = [
     tagline:
       'Find your AI displacement risk score in 60 seconds with a personalized report option.',
     audience: 'General public, career changers, HR professionals',
-    href: 'https://will-ai-replace-my-job.vercel.app',
+    href: 'https://aiadvisor.ssbsconsulting.com',
   },
   {
     name: 'Utsave',
@@ -28,7 +28,7 @@ const products = [
     tagline:
       'AI-powered B2B returns management with automated approvals, risk scoring, and ERP integration.',
     audience: 'Retail operations, supply chain managers, ERP teams',
-    href: 'https://turnify-ai-b2b-portal.vercel.app',
+    href: 'https://b2b-returns.ssbsconsulting.com',
   },
   {
     name: 'SQL Practice Platform',
@@ -37,7 +37,7 @@ const products = [
     tagline:
       'Real-world SQL training with guided practice and AI-powered hints across multiple domains.',
     audience: 'Data analysts, developers, SQL learners, instructors',
-    href: 'https://sql-practice-platform.vercel.app',
+    href: 'https://sqllab.ssbsconsulting.com',
   },
 ];
 

@@ -14,10 +14,10 @@ const Footer: React.FC = () => {
           <div className="footer-services">
             <h4>Products</h4>
             <ul>
-              <li><a href="https://will-ai-replace-my-job.vercel.app" target="_blank" rel="noreferrer">Will AI Replace My Job?</a></li>
+              <li><a href="https://aiadvisor.ssbsconsulting.com" target="_blank" rel="noreferrer">Will AI Replace My Job?</a></li>
               <li><a href="https://www.utsav-events.com" target="_blank" rel="noreferrer">Utsave</a></li>
-              <li><a href="https://turnify-ai-b2b-portal.vercel.app" target="_blank" rel="noreferrer">Turnify</a></li>
-              <li><a href="https://sql-practice-platform.vercel.app" target="_blank" rel="noreferrer">SQL Practice</a></li>
+              <li><a href="https://b2b-returns.ssbsconsulting.com" target="_blank" rel="noreferrer">Turnify</a></li>
+              <li><a href="https://sqllab.ssbsconsulting.com" target="_blank" rel="noreferrer">SQL Practice</a></li>
             </ul>
           </div>
           <div className="footer-contact">
