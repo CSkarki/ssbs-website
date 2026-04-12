@@ -124,6 +124,39 @@ const techStack = [
   'dbt', 'Tableau',
 ];
 
+const testimonials = [
+  {
+    quote:
+      'SSB Solutions brought a rare combination of strategic vision and hands-on delivery. They helped us cut our release cycle in half and stood up a GenAI prototype in under 6 weeks.',
+    name: 'Director of Engineering',
+    org: 'Mid-Market Financial Services Firm',
+    initials: 'DE',
+  },
+  {
+    quote:
+      'The Agile transformation coaching was practical, direct, and stuck. No theory for theory\'s sake — they embedded with our teams and drove real change in how we plan and deliver.',
+    name: 'VP of Product Delivery',
+    org: 'Retail Operations Company',
+    initials: 'VP',
+  },
+  {
+    quote:
+      'Their data engineering team rebuilt our SAP reporting pipeline in a fraction of the time we estimated internally. Accurate, fast, and built to scale.',
+    name: 'Head of Analytics',
+    org: 'Supply Chain & Logistics Enterprise',
+    initials: 'HA',
+  },
+];
+
+const trustBadges = [
+  { label: 'SAFe SPC', sub: 'Program Consultant' },
+  { label: 'SAFe SSM', sub: 'Scrum Master' },
+  { label: 'AWS Certified', sub: 'Cloud Practitioner' },
+  { label: 'ICAgile', sub: 'Certified Professional' },
+  { label: 'IASA', sub: 'Architecture' },
+  { label: 'SAFe POPM', sub: 'Product Owner / PM' },
+];
+
 const Home: React.FC = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
@@ -316,6 +349,109 @@ const Home: React.FC = () => {
               {techStack.map((tech) => (
                 <div className="tech-item" key={tech}>{tech}</div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TRUST BADGES ── */}
+      <div className="section-divider" />
+      <section className="section-shell trust-section">
+        <p className="eyebrow" style={{ textAlign: 'center' }}>Credentials &amp; Certifications</p>
+        <div className="trust-badges-grid">
+          {trustBadges.map((b) => (
+            <div className="trust-badge" key={b.label}>
+              <div className="trust-badge-label">{b.label}</div>
+              <div className="trust-badge-sub">{b.sub}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ── */}
+      <div className="section-divider" />
+      <section className="section-shell testimonials-section">
+        <div className="section-heading">
+          <p className="eyebrow">Client Feedback</p>
+          <h2>Trusted by teams who ship.</h2>
+          <p className="section-sub">
+            A sample of feedback from engagements across financial services, retail, and enterprise
+            technology. Client names kept confidential on request.
+          </p>
+        </div>
+        <div className="testimonials-grid">
+          {testimonials.map((t) => (
+            <article className="testimonial-card" key={t.name}>
+              <div className="testimonial-quote-mark">"</div>
+              <p className="testimonial-quote">{t.quote}</p>
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">{t.initials}</div>
+                <div>
+                  <div className="testimonial-name">{t.name}</div>
+                  <div className="testimonial-org">{t.org}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ── LEAD MAGNET ── */}
+      <div className="section-divider" />
+      <section className="section-shell lead-magnet-section">
+        <div className="lead-magnet-inner">
+          <div className="lead-magnet-copy">
+            <p className="eyebrow">Free Resource</p>
+            <h2>Is your organization<br />AI-ready?</h2>
+            <p>
+              Download our free <strong>AI Readiness Guide</strong> — a practical 8-point
+              framework for executives and delivery leaders evaluating AI adoption. No fluff, no
+              vendor pitch. Just the questions you need to answer before you invest.
+            </p>
+            <ul className="lead-magnet-bullets">
+              <li>How to assess your data foundation for AI</li>
+              <li>5 common AI pitfalls enterprises fall into</li>
+              <li>The 3-stage AI adoption roadmap</li>
+              <li>Build vs. buy decision framework</li>
+            </ul>
+          </div>
+          <div className="lead-magnet-form-wrap">
+            <div className="lead-magnet-card">
+              <div className="lead-magnet-card-title">Get the Free Guide</div>
+              <div className="lead-magnet-card-sub">Delivered instantly to your inbox.</div>
+              <form
+                className="lead-magnet-form"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.target as HTMLFormElement;
+                  const email = (form.elements.namedItem('lm-email') as HTMLInputElement)?.value;
+                  if (email) {
+                    alert(`Thanks! We'll send the AI Readiness Guide to ${email} shortly.`);
+                    form.reset();
+                  }
+                }}
+              >
+                <input
+                  type="text"
+                  name="lm-name"
+                  placeholder="Your name"
+                  className="lm-input"
+                  required
+                />
+                <input
+                  type="email"
+                  name="lm-email"
+                  placeholder="Work email"
+                  className="lm-input"
+                  required
+                />
+                <button type="submit" className="lm-btn">
+                  Send Me the Guide →
+                </button>
+              </form>
+              <p className="lead-magnet-disclaimer">
+                No spam. Unsubscribe any time. We respect your privacy.
+              </p>
             </div>
           </div>
         </div>
