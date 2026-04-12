@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-const products = [
+type Product = {
+  name: string;
+  icon: string;
+  category: string;
+  tagline: string;
+  audience: string;
+  href?: string;
+  videoSrc?: string;
+  anchorId?: string;
+};
+
+const products: Product[] = [
   {
     name: 'Will AI Replace My Job?',
     icon: '🤖',
@@ -39,9 +50,38 @@ const products = [
     audience: 'Data analysts, developers, SQL learners, instructors',
     href: 'https://sqllab.ssbsconsulting.com',
   },
+  {
+    name: 'Automatic Invoice Processing',
+    icon: '📄',
+    category: 'Enterprise AI · Client demo',
+    tagline:
+      'End-to-end intelligent invoice capture, validation, and workflow routing—recorded demo from a client engagement.',
+    audience: 'Finance, AP, shared services, and operations teams',
+    videoSrc: '/videos/invoice-processing-demo.mp4',
+    anchorId: 'product-invoice-processing',
+  },
 ];
 
 const Home: React.FC = () => {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!activeVideo) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setActiveVideo(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [activeVideo]);
+
+  useEffect(() => {
+    const id = window.location.hash.replace(/^#/, '');
+    if (!id) return;
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, []);
+
   return (
     <main className="home-page">
       <section className="home-hero section-shell">
@@ -66,8 +106,8 @@ const Home: React.FC = () => {
               <span>Years expertise</span>
             </div>
             <div>
-              <strong>4</strong>
-              <span>Live products</span>
+              <strong>5</strong>
+              <span>Products &amp; demos</span>
             </div>
             <div>
               <strong>3</strong>
@@ -78,10 +118,32 @@ const Home: React.FC = () => {
 
         <div className="hero-product-grid">
           {products.map((product) => (
-            <article className="hero-mini-card" key={product.name}>
+            <article
+              className={`hero-mini-card${product.videoSrc ? ' hero-mini-card--interactive' : ''}`}
+              key={product.name}
+              id={product.anchorId ? `${product.anchorId}-hero` : undefined}
+              onClick={
+                product.videoSrc
+                  ? () => setActiveVideo(product.videoSrc as string)
+                  : undefined
+              }
+              onKeyDown={
+                product.videoSrc
+                  ? (e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setActiveVideo(product.videoSrc as string);
+                      }
+                    }
+                  : undefined
+              }
+              role={product.videoSrc ? 'button' : undefined}
+              tabIndex={product.videoSrc ? 0 : undefined}
+            >
               <span className="mini-icon">{product.icon}</span>
               <h3>{product.name}</h3>
               <p>{product.category}</p>
+              {product.videoSrc ? <span className="hero-mini-demo-hint">Click to play demo</span> : null}
             </article>
           ))}
         </div>
@@ -93,12 +155,16 @@ const Home: React.FC = () => {
           <h2>Built by us. Used by real people.</h2>
           <p>
             Every product solves a practical problem and is live in production for real users and
-            teams.
+            teams—plus selected client demos you can watch.
           </p>
         </div>
         <div className="products-grid">
           {products.map((product) => (
-            <article className="product-card" key={product.name}>
+            <article
+              className="product-card"
+              key={product.name}
+              id={product.anchorId}
+            >
               <div className="product-top">
                 <span className="product-icon">{product.icon}</span>
                 <span className="pill">{product.category}</span>
@@ -106,9 +172,26 @@ const Home: React.FC = () => {
               <h3>{product.name}</h3>
               <p>{product.tagline}</p>
               <small>Target: {product.audience}</small>
-              <a href={product.href} target="_blank" rel="noreferrer" className="product-link">
-                Launch App
-              </a>
+              {product.videoSrc ? (
+                <>
+                  <button
+                    type="button"
+                    className="product-video-launch"
+                    onClick={() => setActiveVideo(product.videoSrc as string)}
+                    aria-label={`Play video demo: ${product.name}`}
+                  >
+                    <span className="product-video-launch__play" aria-hidden>
+                      ▶
+                    </span>
+                    <span className="product-video-launch__label">Watch demo video</span>
+                  </button>
+                  <p className="product-video-hint">Opens fullscreen player. Press Esc to close.</p>
+                </>
+              ) : (
+                <a href={product.href} target="_blank" rel="noreferrer" className="product-link">
+                  Launch App
+                </a>
+              )}
             </article>
           ))}
         </div>
@@ -146,8 +229,40 @@ const Home: React.FC = () => {
           Schedule a Call
         </Link>
       </section>
+
+      {activeVideo ? (
+        <div
+          className="video-modal-backdrop"
+          role="presentation"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div
+            className="video-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Product demo video"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="video-modal-close"
+              onClick={() => setActiveVideo(null)}
+              aria-label="Close video"
+            >
+              ×
+            </button>
+            <video
+              className="video-modal-player"
+              src={activeVideo}
+              controls
+              autoPlay
+              playsInline
+            />
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 };
 
-export default Home; 
+export default Home;

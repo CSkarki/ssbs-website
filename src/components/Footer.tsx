@@ -18,6 +18,11 @@ const Footer: React.FC = () => {
               <li><a href="https://www.utsav-events.com" target="_blank" rel="noreferrer">Utsave</a></li>
               <li><a href="https://b2b-returns.ssbsconsulting.com" target="_blank" rel="noreferrer">Turnify</a></li>
               <li><a href="https://sqllab.ssbsconsulting.com" target="_blank" rel="noreferrer">SQL Practice</a></li>
+              <li>
+                <Link to={{ pathname: '/', hash: 'product-invoice-processing' }}>
+                  Invoice Processing (demo)
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="footer-contact">
