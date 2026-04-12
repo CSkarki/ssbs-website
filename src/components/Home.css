@@ -50,11 +50,11 @@
 }
 
 .section-heading h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1.75rem, 2.5vw, 2.4rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.28;
+  letter-spacing: normal;
+  line-height: 1.35;
   margin: 0 0 0.5rem;
 }
 
@@ -120,11 +120,11 @@
 }
 
 .hero-copy h1 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: normal;
+  line-height: 1.25;
   margin: 0 0 1.1rem;
 }
 
@@ -159,7 +159,7 @@
 
 .stat strong {
   display: block;
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.7rem;
   font-weight: 800;
   color: var(--text);
@@ -199,7 +199,7 @@
 }
 
 .hero-mini-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
   margin: 0 0 4px;
@@ -247,7 +247,7 @@
   text-decoration: none;
   border-radius: 9px;
   padding: 0.72rem 1.25rem;
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   font-size: 0.88rem;
   border: 1px solid transparent;
@@ -354,11 +354,11 @@
 .pill--sky    { color: var(--c-sky);    background: rgba(56, 189, 248, 0.1);  border-color: rgba(56, 189, 248, 0.25); }
 
 .product-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.1rem;
   font-weight: 800;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
+  letter-spacing: normal;
+  line-height: 1.4;
   margin: 0 0 0.5rem;
   color: var(--text);
 }
@@ -385,7 +385,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
@@ -415,7 +415,7 @@
   background: rgba(56, 189, 248, 0.1);
   color: var(--c-sky);
   font: inherit;
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
@@ -499,7 +499,7 @@
 }
 
 .service-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
   margin: 0 0 8px;
@@ -532,7 +532,7 @@
 }
 
 .service-learn-more {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent);
@@ -560,12 +560,12 @@
 }
 
 .why-left h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1.75rem, 2.5vw, 2.4rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
   margin: 0 0 1.75rem;
-  line-height: 1.28;
+  line-height: 1.35;
 }
 
 .why-list {
@@ -590,7 +590,7 @@
 }
 
 .why-item-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   margin-bottom: 3px;
@@ -612,7 +612,7 @@
 }
 
 .why-panel-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   margin-bottom: 4px;
@@ -660,12 +660,12 @@
 }
 
 .cta-banner h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: normal;
   margin: 0 0 0.75rem;
-  line-height: 1.28;
+  line-height: 1.35;
 }
 
 .cta-banner p {
@@ -714,7 +714,7 @@
 }
 
 .trust-badge-label {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--accent);
@@ -756,7 +756,7 @@
 }
 
 .testimonial-quote-mark {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: rgba(45, 212, 191, 0.25);
@@ -791,7 +791,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--accent);
@@ -799,7 +799,7 @@
 }
 
 .testimonial-name {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--text);
@@ -826,11 +826,11 @@
 }
 
 .lead-magnet-copy h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.28;
+  letter-spacing: normal;
+  line-height: 1.35;
   margin: 0 0 0.75rem;
 }
 
@@ -889,7 +889,7 @@
 }
 
 .lead-magnet-card-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
@@ -934,7 +934,7 @@
   padding: 0.78rem;
   background: var(--accent);
   color: var(--navy);
-  font-family: 'Syne', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
   font-size: 0.88rem;
   border: none;
