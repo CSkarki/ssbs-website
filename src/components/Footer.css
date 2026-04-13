@@ -28,22 +28,7 @@
   color: var(--muted, #8ba3c7);
   line-height: 1.65;
   max-width: 220px;
-  margin-bottom: 16px;
-}
-
-.footer-linkedin {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--muted, #8ba3c7);
-  text-decoration: none;
-  transition: color 0.18s ease;
-}
-
-.footer-linkedin:hover {
-  color: var(--text, #f0f4ff);
+  margin-bottom: 0;
 }
 
 /* Column headers */

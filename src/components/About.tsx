@@ -201,14 +201,6 @@ const About: React.FC = () => {
             </p>
             <div className="about-cta-btns">
               <Link to="/contact" className="btn btn-primary">Schedule a Free Call →</Link>
-              <a
-                href="https://www.linkedin.com/company/ssb-solutions-llc"
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline"
-              >
-                Connect on LinkedIn
-              </a>
             </div>
           </motion.div>
         </div>
