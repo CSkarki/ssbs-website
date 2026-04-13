@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Contact.css';
 
+/** Public event URL from Calendly (Event type → Copy link). If wrong or missing, Calendly shows 404 inside the embed. */
+const CALENDLY_EVENT_URL = process.env.REACT_APP_CALENDLY_URL?.trim() || '';
+
+function buildCalendlyEmbedUrl(base: string): string {
+  const q = 'hide_gdpr_banner=1&background_color=0b1120&text_color=f0f4ff&primary_color=2dd4bf';
+  return base.includes('?') ? `${base}&${q}` : `${base}?${q}`;
+}
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,17 +21,14 @@ const Contact: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Inject Calendly widget script once
   useEffect(() => {
+    if (!CALENDLY_EVENT_URL) return;
     const existing = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
     if (existing) return;
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
-    return () => {
-      // leave the script mounted for SPA navigation
-    };
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -78,12 +83,20 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-            {/* Calendly inline widget */}
-            <div
-              className="calendly-inline-widget"
-              data-url="https://calendly.com/ssbsconsulting/30min?hide_gdpr_banner=1&background_color=0b1120&text_color=f0f4ff&primary_color=2dd4bf"
-              style={{ minWidth: '280px', height: '660px' }}
-            />
+            {CALENDLY_EVENT_URL ? (
+              <div
+                className="calendly-inline-widget"
+                data-url={buildCalendlyEmbedUrl(CALENDLY_EVENT_URL)}
+                style={{ minWidth: '280px', height: '660px' }}
+              />
+            ) : (
+              <div className="calendly-fallback">
+                <p>
+                  Online booking is not available yet. Please use <strong>Send us a message</strong>{' '}
+                  — we typically reply within one business day.
+                </p>
+              </div>
+            )}
           </motion.div>
 
           {/* ── RIGHT: Contact form ── */}

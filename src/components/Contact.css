@@ -102,6 +102,26 @@
   overflow: hidden;
 }
 
+.calendly-fallback {
+  min-height: 200px;
+  padding: 20px 18px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.calendly-fallback p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted, #8ba3c7);
+  line-height: 1.65;
+}
+
+.calendly-fallback strong {
+  color: var(--text, #f0f4ff);
+  font-weight: 600;
+}
+
 /* ── Form panel ── */
 .contact-form-panel {
   background: rgba(255, 255, 255, 0.04);

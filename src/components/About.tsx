@@ -74,13 +74,13 @@ const About: React.FC = () => {
             {/* Headshot / photo placeholder */}
             <div className="about-photo-wrap">
               <div className="about-photo-placeholder" aria-label="Founder photo">
-                <span className="about-photo-initials">CK</span>
+                <span className="about-photo-initials">SK</span>
                 <div className="about-photo-ring" />
               </div>
               <div className="about-photo-caption">
                 <strong>Suman Karki</strong>
                 <span>Founder &amp; Principal Consultant</span>
-                <span>Aldie, Virginia, USA</span>
+                <span> Virginia, USA</span>
               </div>
             </div>
           </motion.div>
